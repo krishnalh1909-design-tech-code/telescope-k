@@ -451,109 +451,88 @@ tl1
 
 // -------------------------------------------------
 
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: ".main",
+      start: "0.1%",
+      end: "90%",
+      scrub: 0.8,
+      pin: true,
+    },
+  })
+  .to(".page2", {
+    bottom: "0%",
+    left: "0%",
+    ease: "sine.inOut",
+  });
+
 // // -----------------------------------------------------------
 
-// const heading = document.getElementById("animated-heading");
-// const text = heading.textContent;
-// heading.innerHTML = "";
+const heading = document.getElementById("animated-heading");
+const text = heading.textContent;
+heading.innerHTML = "";
 
-// text.split("").forEach((char) => {
-//   const span = document.createElement("span");
-//   span.className = "letter";
-//   span.textContent = char;
-//   heading.appendChild(span);
-// });
+text.split("").forEach((char) => {
+  const span = document.createElement("span");
+  span.className = "letter";
+  span.textContent = char;
+  heading.appendChild(span);
+});
+
+// ✅ Animated Heading Letters
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: ".main",
+      start: "0.2%",
+      end: "100%",
+      scrub: 1,
+      pin: true,
+      // markers: true,
+    },
+  })
+  .to(".letter", {
+    color: "black",
+    stagger: 0.07,
+    ease: "power1.inOut",
+  });
 
 // // ✅ Page2 Slide In
-// gsap
-//   .timeline({
-//     scrollTrigger: {
-//       trigger: ".main",
-//       start: "0.1%",
-//       end: "90%",
-//       scrub: 0.8,
-//       pin: true,
-//     },
-//   })
-//   .to(".page2", {
-//     bottom: "0%",
-//     left: "0%",
-//     ease: "sine.inOut",
-//   });
 
 // ------------------------------------------------------------------
 
-// // ✅ Animated Heading Letters
-// gsap
-//   .timeline({
-//     scrollTrigger: {
-//       trigger: ".main",
-//       start: "0.2%",
-//       end: "100%",
-//       scrub: 1,
-//       pin: true,
-//       // markers: true,
-//     },
-//   })
-//   .to(".letter", {
-//     color: "black",
-//     stagger: 0.07,
-//     ease: "power1.inOut",
-//   });
-
 // ---------------------------------------------------------------
 
-// // ✅ Page2-Part2 Upward Scroll
-// let size;
+let size = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".main",
+    start: "0.3%",
+    end: "100%",
+    scrub: 1,
+    pin: true,
+  },
+});
 
-// function createTimeline() {
-//   if (size) {
-//     size.kill(); // kill existing timeline to prevent stacking
-//   }
-
-//   size = gsap.timeline({
-//     scrollTrigger: {
-//       trigger: ".main",
-//       start: "0.3%",
-//       end: "100%",
-//       scrub: 1,
-//       pin: true,
-//     },
-//   });
-
-//   if (window.innerWidth > 1000) {
-//     size.fromTo(
-//       ".page2-part2",
-//       { top: "80%" },
-//       {
-//         top: "-100%",
-//         ease: "sine.inOut",
-//       }
-//     );
-//   } else {
-//     size.fromTo(
-//       ".page2-part2",
-//       { right: "-110%" },
-//       {
-//         right: "140%",
-//         ease: "sine.inOut",
-//       }
-//     );
-//   }
-// }
-
-// // Create timeline initially
-// createTimeline();
-
-// // Recreate timeline on resize with debounce
-// let resizeTimeout;
-// window.addEventListener("resize", () => {
-//   clearTimeout(resizeTimeout);
-//   resizeTimeout = setTimeout(() => {
-//     createTimeline();
-//     ScrollTrigger.refresh(); // Refresh ScrollTrigger to update positions
-//   }, 200); // adjust delay as needed
-// });
+if (window.innerWidth > 1000) {
+  size.fromTo(
+    ".page2-part2",
+    { top: "80%" },
+    {
+      top: "-100%",
+      ease: "sine.inOut",
+    }
+  );
+} else {
+  size.fromTo(
+    ".page2-part2",
+    { right: "-110%" },
+    {
+      right: "140%",
+      ease: "sine.inOut",
+    }
+  );
+}
 
 // const shops = gsap.timeline({
 //   scrollTrigger: {
