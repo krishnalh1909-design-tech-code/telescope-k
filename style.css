@@ -1174,7 +1174,7 @@ form button:hover {
 /* ---------------------------------PAGE 2----------------- */
 
 .page2 {
-  height: 105vh;
+  height: 100vh;
   width: 100%;
   position: absolute;
   bottom: -100%;
@@ -1341,7 +1341,7 @@ form button:hover {
   left: 0;
   height: 100vh;
   width: 100%;
-  background-color: #f4f3f0;
+  background-color: #0eb092;
   display: flex;
   flex-direction: column;
   padding: 1vw;
