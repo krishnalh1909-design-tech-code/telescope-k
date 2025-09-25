@@ -66,8 +66,8 @@ body.loaded #loader {
 
 /* ---------------------------------------------------- */
 .telescope {
-  height: 98px;
-  width: 696px;
+  height: 100px;
+  width: 700px;
   background: white;
   position: fixed;
   top: 92%;
@@ -398,23 +398,23 @@ form button:hover {
 /* ---------------------------------------------- */
 
 .page1-div1 {
-  height: 126px;
-  width: 178px;
+  height: 115px;
+  width: 168px;
   top: 20%;
   left: 30%;
   z-index: 5;
 }
 
 .page1-div2 {
-  height: 193px;
-  width: 211px;
+  height: 168px;
+  width: 188px;
   top: 5%;
   left: 35%;
 }
 
 .page1-div3 {
-  height: 159px;
-  width: 185px;
+  height: 171px;
+  width: 197px;
   bottom: 10%;
   left: 15%;
 }
@@ -441,8 +441,8 @@ form button:hover {
 }
 
 .page1-div7 {
-  height: 145px;
-  width: 135px;
+  height: 133px;
+  width: 121px;
   top: 12%;
   right: 30%;
 }
