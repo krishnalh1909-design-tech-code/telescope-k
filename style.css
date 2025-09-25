@@ -66,8 +66,8 @@ body.loaded #loader {
 
 /* ---------------------------------------------------- */
 .telescope {
-  height: 100px;
-  width: 700px;
+  height: 80px;
+  width: 550px;
   background: white;
   position: fixed;
   top: 92%;
