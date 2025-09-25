@@ -1,3 +1,19 @@
+// ✅ Lenis Setup (Smooth Scroll)
+const lenis = new Lenis({
+  duration: 1.5,
+  easing: (t) => 1 - Math.pow(1 - t, 3), // cubic ease-out
+  smooth: true,
+});
+
+lenis.on("scroll", ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
+
+
 (function () {
   // Check if width is inside the 600-1024 range (inclusive)
   function isInRange(width) {
@@ -31,45 +47,45 @@ window.addEventListener("load", () => {
   }, 3000);
 });
 
-// const signinBtn = document.querySelector(".nav3 h1");
-// const signinCloseBtn = document.querySelector(".signin-close-btn");
+const signinBtn = document.querySelector(".nav3 h1");
+const signinCloseBtn = document.querySelector(".signin-close-btn");
 
-// signinBtn.addEventListener("click", () => {
-//   gsap.to(".shadow", {
-//     opacity: 0.5,
-//     zIndex: 100,
-//     duration: 0.01,
-//   });
+signinBtn.addEventListener("click", () => {
+  gsap.to(".shadow", {
+    opacity: 0.5,
+    zIndex: 100,
+    duration: 0.01,
+  });
 
-//   gsap.to(".signin-container", {
-//     height: "50vh",
-//     overflow: "initial",
-//   });
+  gsap.to(".signin-container", {
+    height: "50vh",
+    overflow: "initial",
+  });
 
-//   gsap.to(".signin-close-btn", {
-//     height: "55px",
-//     duration: 0.3,
-//     delay: 0.7,
-//   });
-// });
+  gsap.to(".signin-close-btn", {
+    height: "55px",
+    duration: 0.3,
+    delay: 0.7,
+  });
+});
 
-// signinCloseBtn.addEventListener("click", () => {
-//   gsap.to(".signin-close-btn", {
-//     height: "0px",
-//     duration: 0.3,
-//   });
+signinCloseBtn.addEventListener("click", () => {
+  gsap.to(".signin-close-btn", {
+    height: "0px",
+    duration: 0.3,
+  });
 
-//   gsap.to(".signin-container", {
-//     height: "0vh",
-//     overflow: "hidden",
-//     delay: 0.2,
-//   });
+  gsap.to(".signin-container", {
+    height: "0vh",
+    overflow: "hidden",
+    delay: 0.2,
+  });
 
-//   gsap.to(".shadow", {
-//     opacity: 0,
-//     zIndex: 90,
-//   });
-// });
+  gsap.to(".shadow", {
+    opacity: 0,
+    zIndex: 90,
+  });
+});
 
 setTimeout(() => {
   const main = document.querySelector(".main");
@@ -548,6 +564,10 @@ const shops = gsap.timeline({
 shops
   .to(".page2-part2", { opacity: 0 }, "a")
   .to(".shops", { top: "-125%" }, "a")
+  
+  
+  
+
 //   .from(".curate1", { x: 1500, y: 0 }, "b-=0.69")
 //   .from(".curate2,.curate4,.curate6", { x: 1500, y: -1500 }, "c-=0.69")
 //   .from(".curate3,.curate5", { x: 1500, y: 1500 }, "d-=0.69")
@@ -679,7 +699,7 @@ const tlBottom = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
     start: "50.9%",
-    end: "200%",
+    end: "100%",
     scrub: 2,
     pin: true,
     // markers: true,
