@@ -1,6 +1,6 @@
 // ✅ Lenis Setup (Smooth Scroll)
 const lenis = new Lenis({
-  duration: 0.5,
+  duration: 0.8,
   easing: (t) => 1 - Math.pow(1 - t, 3), // cubic ease-out
   smooth: true,
 });
@@ -316,7 +316,7 @@ gsap
       trigger: ".main",
       start: "top top",
       end: "10%",
-      scrub: 0.5,
+      scrub: 2,
     },
   })
   .to(".line1", { opacity: 0, duration: 1 });
@@ -554,17 +554,15 @@ const shops = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
     start: "0.4%",
-    end: "500%",
-    scrub: 1,
+    end: "350%",
+    scrub: 2,
     pin: true,
     // markers: true,
   },
 });
 
 shops
-  .to(".page2-part2", { opacity: 0 }, "a")
-  .to(".shops", { top: "-266%" }, "a")
-
+  .to(".shops", { top: "-266%" }, 0)
   .from(".curate1", { x: 1500, y: 0 }, "b-=0.69")
   .from(".curate2,.curate4,.curate6", { x: 1500, y: -1500 }, "c-=0.69")
   .from(".curate3,.curate5", { x: 1500, y: 1500 }, "d-=0.69")
@@ -579,7 +577,7 @@ const page3 = gsap.timeline({
     trigger: ".main",
     start: "50.7%",
     end: "200%",
-    scrub: 1,
+    scrub: 3,
     pin: true,
     markers: true,
   },
