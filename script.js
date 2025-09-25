@@ -547,7 +547,7 @@ const shops = gsap.timeline({
 
 shops
   .to(".page2-part2", { opacity: 0 }, "a")
-  .to(".shops", { top: "0%" }, "a")
+  .to(".shops", { top: "-125%" }, "a")
 //   .from(".curate1", { x: 1500, y: 0 }, "b-=0.69")
 //   .from(".curate2,.curate4,.curate6", { x: 1500, y: -1500 }, "c-=0.69")
 //   .from(".curate3,.curate5", { x: 1500, y: 1500 }, "d-=0.69")

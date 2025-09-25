@@ -1174,7 +1174,7 @@ form button:hover {
 /* ---------------------------------PAGE 2----------------- */
 
 .page2 {
-  height: 100vh;
+  height: 105vh;
   width: 100%;
   position: absolute;
   bottom: -100%;
@@ -1339,9 +1339,10 @@ form button:hover {
   position: absolute;
   top: 100%;
   left: 0;
-  height: 100vh;
+  height: 240vh;
   width: 100%;
-  background-color: #0eb092;
+  /* background-color: #0eb092; */
+  background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
   /* padding: 1vw; */
@@ -1355,7 +1356,7 @@ form button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f4f3f0;
+  /* background-color: #f4f3f0; */
 }
 
 .shop-heading h4 {
