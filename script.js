@@ -1,6 +1,6 @@
 // ✅ Lenis Setup (Smooth Scroll)
 const lenis = new Lenis({
-  duration: 1.5,
+  duration: 0.5,
   easing: (t) => 1 - Math.pow(1 - t, 3), // cubic ease-out
   smooth: true,
 });
@@ -12,7 +12,6 @@ gsap.ticker.add((time) => {
 });
 
 gsap.ticker.lagSmoothing(0);
-
 
 (function () {
   // Check if width is inside the 600-1024 range (inclusive)
@@ -439,31 +438,32 @@ tl1
       stagger: 0.025,
     },
     "a"
-  )
-  .to(".main-div-heading", {
-    opacity: 0,
-  })
-  .from(
-    ".page2-tag h1",
-    {
-      opacity: 0,
-    },
-    "a+=1.5"
-  )
+  );
 
-  .from(
-    ".tag2-line1,.tag2-line2",
-    {
-      opacity: 0,
-    },
-    "a+=1.5"
-  )
-  .from(".right-arrow,.left-arrow", {
-    scale: 0,
-  })
-  .to(".gallery", {
-    opacity: 1,
-  });
+tl1.to(".main-div-heading", {
+  opacity: 0,
+});
+tl1.from(
+  ".page2-tag h1",
+  {
+    opacity: 0,
+  },
+  "a+=1.5"
+);
+
+tl1.from(
+  ".tag2-line1,.tag2-line2",
+  {
+    opacity: 0,
+  },
+  "a+=1.5"
+);
+tl1.from(".right-arrow,.left-arrow", {
+  scale: 0,
+});
+tl1.to(".gallery", {
+  opacity: 1,
+});
 
 // -------------------------------------------------
 
@@ -554,7 +554,7 @@ const shops = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
     start: "0.4%",
-    end: "200%",
+    end: "500%",
     scrub: 1,
     pin: true,
     // markers: true,
@@ -563,24 +563,17 @@ const shops = gsap.timeline({
 
 shops
   .to(".page2-part2", { opacity: 0 }, "a")
-  .to(".shops", { top: "-125%" }, "a")
-  
-  
-  
+  .to(".shops", { top: "-266%" }, "a")
 
-//   .from(".curate1", { x: 1500, y: 0 }, "b-=0.69")
-//   .from(".curate2,.curate4,.curate6", { x: 1500, y: -1500 }, "c-=0.69")
-//   .from(".curate3,.curate5", { x: 1500, y: 1500 }, "d-=0.69")
-//   .from(".your1,.your3", { x: 1500, y: -1500 }, "e-=0.6")
-//   .from(".your2,.your4", { x: 1500, y: 1500 }, "e-=0.6")
-//   .from(".taste1,.taste3,.taste5", { x: 1500, y: -1500 }, "f-=0.5")
-//   .from(".taste2,.taste4", { x: 1500, y: 1500 }, "f-=0.5");
+  .from(".curate1", { x: 1500, y: 0 }, "b-=0.69")
+  .from(".curate2,.curate4,.curate6", { x: 1500, y: -1500 }, "c-=0.69")
+  .from(".curate3,.curate5", { x: 1500, y: 1500 }, "d-=0.69")
+  .from(".your1,.your3", { x: 1500, y: -1500 }, "e-=0.6")
+  .from(".your2,.your4", { x: 1500, y: 1500 }, "e-=0.6")
+  .from(".taste1,.taste3,.taste5", { x: 1500, y: -1500 }, "f-=0.5")
+  .from(".taste2,.taste4", { x: 1500, y: 1500 }, "f-=0.5");
 
 
-
-
-
-// Page3 timeline
 const page3 = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
@@ -616,7 +609,7 @@ const tlNew = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
     start: "50.8%",
-    end: "+=5000",
+    end: "900%",
     scrub: 2,
     pin: true,
     // markers: true,
