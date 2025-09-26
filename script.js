@@ -1,6 +1,6 @@
 // ✅ Lenis Setup (Smooth Scroll)
 const lenis = new Lenis({
-  duration: 0.8,
+  duration: 1,
   easing: (t) => 1 - Math.pow(1 - t, 3), // cubic ease-out
   smooth: true,
 });
@@ -554,7 +554,7 @@ const shops = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
     start: "0.4%",
-    end: "350%",
+    end: "300%",
     scrub: 2,
     pin: true,
     // markers: true,
@@ -575,10 +575,9 @@ const page3 = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
     start: "50.7%",
-    end: "200%",
+    end: "150%",
     scrub: 3,
     pin: true,
-    markers: true,
   },
 });
 
