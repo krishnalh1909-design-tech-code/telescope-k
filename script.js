@@ -307,7 +307,7 @@ setTimeout(() => {
       0
     );
   });
-}, 3000);
+}, 3800);
 
 // ✅ Line1 Fade Out
 gsap
