@@ -571,7 +571,6 @@ shops
   .from(".taste1,.taste3,.taste5", { x: 1500, y: -1500 }, "f-=0.5")
   .from(".taste2,.taste4", { x: 1500, y: 1500 }, "f-=0.5");
 
-
 const page3 = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
@@ -721,3 +720,65 @@ tlBottom
   )
   .to(".nav3", { top: "10%", left: "90%" }, "z+=2")
   .to(".nav1", { opacity: 1 });
+
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.matchMedia({
+  "(max-width: 767px)": function () {
+    const shops = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".main",
+        start: "0.4%",
+        end: "150%",
+        scrub: 2,
+        pin: true,
+        // markers: true,
+      },
+    });
+
+    shops
+      .to(".shops", { top: "-266%" }, 0)
+      .from(".curate1", { x: 1500, y: 0 }, "b-=0.69")
+      .from(".curate2,.curate4,.curate6", { x: 1500, y: -1500 }, "c-=0.69")
+      .from(".curate3,.curate5", { x: 1500, y: 1500 }, "d-=0.69")
+      .from(".your1,.your3", { x: 1500, y: -1500 }, "e-=0.6")
+      .from(".your2,.your4", { x: 1500, y: 1500 }, "e-=0.6")
+      .from(".taste1,.taste3,.taste5", { x: 1500, y: -1500 }, "f-=0.5")
+      .from(".taste2,.taste4", { x: 1500, y: 1500 }, "f-=0.5");
+  },
+});
+
+ScrollTrigger.matchMedia({
+  // Media query for screens less than 768px wide
+  "(max-width: 767px)": function () {
+    const page3 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".main",
+        start: "50.7%",
+        end: "150%",
+        scrub: 3,
+        pin: true,
+        markers: true,
+      },
+    });
+
+    page3
+      .to(".page3-line2", { left: "-20%", ease: "power1.inOut" }, "a")
+      .to(".page3-line3", { right: "-30%", ease: "power1.inOut" }, "a")
+      .to(".page3-main-div", { scale: 1, ease: "power2.inOut" }, "a")
+      .to(
+        [
+          ".page3-img1",
+          ".page3-img2",
+          ".page3-img3",
+          ".page3-img4",
+          ".page3-img5",
+          ".page3-img6",
+        ],
+        { scale: 1, stagger: 0.025 },
+        "a"
+      )
+      .to(".clip-bg", { opacity: 1 })
+      .from(".tag3-line1,.tag3-line2", { opacity: 0 });
+  },
+});
